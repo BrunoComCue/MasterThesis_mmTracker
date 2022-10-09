@@ -1,0 +1,26 @@
+running:
+  covariance: default
+  score_threshold: 0.7    #use it for the trk_score confidence
+  max_age_since_update: 2
+  # min_hits_to_birth: 3    ### change it, assuming that if the detection score is over the given threshold, it is already good enough to start a tracklet
+  # min_hits_to_birth: 1
+  trk_deletion_threshold: 0.3  ###
+  match_type: bipartite
+  asso: giou
+  asso_thres:
+    iou: 0.9
+    giou: 1.5
+
+redundancy:
+  mode: mm
+  det_score_threshold: 
+    iou: 0.1
+    giou: 0.1
+  det_dist_threshold: 
+    iou: 0.1
+    giou: -0.5
+
+data_loader:
+  pc: true
+  nms: true
+  nms_thres: 0.25
